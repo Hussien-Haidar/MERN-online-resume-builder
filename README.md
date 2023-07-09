@@ -1,0 +1,22 @@
+# MERN-online-resume-builder
+
+### About
+This MERN website application is built in order to help you create a professional and attractive resume in minutes. Whether you are looking
+for a job, applying for a scholarship, or showcasing your portfolio, Resume Builder can help you stand out from the crowd.
+
+With Resume Builder, you don’t need to worry about formatting, designing, or writing your resume. All you need to do is enter your
+information and choose from a variety of templates that suit your style and industry.
+
+Resume Builder also allows you to export your resume as a PDF file that you can download, print, or share online. You can also save
+your resume and edit it later whenever you need to update your information or change your template.
+
+### Images
+![Screenshot 2023-07-09 202800](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/e9142b0a-439d-4640-bf68-9f4d3ee875f3)
+
+![Screenshot 2023-07-09 202835](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/abdfe1b3-a089-495e-9d84-483f1530b6ed)
+
+![Screenshot 2023-07-09 202901](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/40efcf4f-6305-4772-bf83-6e69994630b2)
+
+![Screenshot 2023-07-09 202931](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/f234dbd7-01ce-4baf-a387-0333235447d9)
+
+![Screenshot 2023-07-09 202955](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/ee0d10a2-bb2b-43e4-9049-18beaa6206fa)
