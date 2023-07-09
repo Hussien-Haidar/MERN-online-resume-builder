@@ -1,0 +1,557 @@
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* Telegraf font */
+@font-face {
+  font-family: 'Telegraf';
+  src: url('../assets/fonts/PPTelegraf-Regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Telegraf';
+  src: url('../assets/fonts/PPTelegraf-UltraBold.otf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Telegraf';
+  src: url('../assets/fonts/PPTelegraf-UltraLight.otf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+/* TT Hoves font */
+@font-face {
+  font-family: 'TT Hoves';
+  src: url('../assets/fonts/TT\ Hoves\ Pro\ Trial\ Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Hoves';
+  src: url('../assets/fonts/TT\ Hoves\ Pro\ Trial\ Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'TT Hoves';
+  src: url('../assets/fonts/TT\ Hoves\ Pro\ Trial\ Light.ttf') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+/* layout */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
+body {
+  background: #f1f1f1;
+  margin: 0;
+  font-family: "Poppins";
+}
+
+header {
+  background: #fff;
+}
+
+select {
+  width: 100%;
+  height: 30px;
+}
+
+textarea {
+  width: 100%;
+  height: 200px;
+  max-width: 100%;
+}
+
+header .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+.pages {
+  max-width: 1400px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* homepage */
+.home {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 100px;
+}
+
+.resume-details {
+  background: #fff;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.profile-details {
+  background: #fff;
+  width: 50%;
+  border-radius: 4px;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.resume-details h4 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+  color: var(--primary);
+}
+
+.resume-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.resume-details-delete-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
+.resume-details-view-button {
+  position: absolute;
+  top: 20px;
+  right: 80px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
+.resume-details-edit-button {
+  position: absolute;
+  top: 20px;
+  right: 180px;
+  cursor: pointer;
+  background: #f1f1f1;
+  padding: 6px;
+  border-radius: 50%;
+  color: #333;
+}
+
+.about-me {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* new workout form */
+label,
+input {
+  display: block;
+}
+
+input {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+form button {
+  background: var(--primary);
+  border: 0;
+  color: #fff;
+  padding: 10px;
+  font-family: "Poppins";
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+div.error {
+  padding: 10px;
+  background: #ffefef;
+  border: 1px solid var(--error);
+  color: var(--error);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+div.success {
+  padding: 10px;
+  background: #f8ffef;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+input.error {
+  border: 1px solid var(--error);
+}
+
+/* navbar */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 10px;
+}
+
+nav button {
+  background: #fff;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-family: "Poppins";
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 10px;
+}
+
+/* auth forms */
+form.signup,
+form.login {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+form.create-resume {
+  max-width: 70%;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffffB5;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 20px 3px 3px 3px;
+}
+
+.content-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.resume-details-title-span {
+  font-size: 14px;
+  font-weight: 600;
+  color: gray;
+}
+
+.content-add-input-button {
+  background-color: greenyellow;
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px 3px 3px 3px;
+  cursor: pointer;
+}
+
+.content-delete-input-button {
+  background-color: red;
+  width: 80px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px 1px 1px 1px;
+  cursor: pointer;
+}
+
+.create-resume-button {
+  display: block;
+  margin: 0 auto;
+  background-color: lightgray;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.4px;
+  width: 200px;
+  border-radius: 20px 3px 3px 3px;
+}
+
+.card {
+  width: 650px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+.profile-edit-link {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px 0;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.profile-image {
+  float: right;
+  padding: 20px;
+  height: 150px;
+  width: 150px;
+}
+
+.profile-info {
+  float: left;
+  padding: 30px 25px;
+  text-align: left;
+}
+
+.create-resume-link {
+  padding: 0px 70px;
+  color: blue;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+/* resume template design */
+.resume-template {
+  height: 842px;
+  width: 595px;
+  background: #fff;
+  border-radius: 4px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.resume-template span {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.resume-template-body {
+  width: 595px;
+  border-radius: 4px;
+  margin: 20px auto;
+  background: #fff;
+}
+
+.resume-template-body span {
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.resume-template-body-1 {
+  height: 842px;
+  width: 230px;
+  background-color: #2A78AB;
+  float: left;
+  padding: 0 20px;
+  color: white;
+}
+
+.resume-template-body-2 {
+  height: 842px;
+  width: 305px;
+  font-family: 'TT Hoves' sans-serif;
+  float: right;
+  margin: 15px 0 0 20px;
+}
+
+.resume-template-profile-picture {
+  height: 200px;
+  width: 200px;
+  margin: 20px 0 10px 15px;
+  border: 1px gray solid;
+  border-radius: 50%;
+}
+
+.resume-template .resume-template-fullname {
+  font-size: 22px;
+  font-family: 'Telegraf', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.6px;
+}
+
+.resume-template .resume-template-job-title {
+  font-size: 15px;
+  font-family: 'Telegraf', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  padding-left: 4px;
+}
+
+.resume-template-personal-logo {
+  height: 12px;
+  margin: 0 5px 0 8px;
+}
+
+.resume-template-personal-info span {
+  font-size: 9px;
+  font-weight: lighter;
+}
+
+.resume-template-personal-info a {
+  font-size: 9px;
+  font-weight: lighter;
+  color: white;
+}
+
+.resume-template-content {
+  margin-right: 5px;
+}
+
+.resume-template-content-title {
+  font-family: 'Telegraf' sans-serif;
+  font-weight: 600;
+  background-color: #E0EFFA;
+  padding: 10px;
+}
+
+.resume-template-content-logo {
+  height: 20px;
+}
+
+.resume-template-logo-and-text image {
+  float: left;
+}
+
+.resume-template-body-page {
+  font-family: 'TT Hoves' sans-serif;
+  padding: 0;
+}
+
+.resume-template-body-page .resume-template-content-title {
+  width: 220px;
+  padding-left: 20px;
+}
+
+.resume-template-body-page .resume-template-content {
+  padding-left: 25px;
+}
+
+.profile-edit-button {
+  background-color: var(--primary);
+  padding: 10px 40px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+.dropdown-content {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-picture {
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  z-index: 1;
+}
+
+.dropdown-item {
+  margin-bottom: 8px;
+}
+
+.dropdown-item:last-child {
+  margin-bottom: 0;
+}
+
+.navbar-picture {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border-color: 1px gray solid;
+}
+
+.delete-account-button {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.download-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px var(--error) solid;
+}
+
+.button-content {
+  display: flex;
+  align-items: center;
+}
+
+.button-content img {
+  height: 35px;
+  margin-right: 5px;
+  /* Adjust the spacing between the icon and text as needed */
+}
