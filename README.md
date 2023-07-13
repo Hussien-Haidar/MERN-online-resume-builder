@@ -11,7 +11,7 @@ Resume Builder also allows you to export your resume as a PDF file that you can 
 your resume and edit it later whenever you need to update your information or change your template.
 
 ### Note
-This website is not hosted yet, if I did I will add the link of the website. If you are interested to try my website simply download the soure code and run in any terminal inside the frontend directory 'npm install' then 'npm start'. Second step, run in the backend directory 'npm install' then 'nodemon server.js' and then type in the web browser 'localhost:3000' and the website will work properly.
+This website is not hosted yet, if I did I will add the link of the website. If you are interested to try my website simply download the soure code and run in any terminal inside the backend directory 'npm install' then 'nodemon server.js'. Second step, run in the frontend directory 'npm install' then 'npm start' and then type in the web browser 'localhost:3000' and the website will work properly.
 
 ### Images
 ![Screenshot 2023-07-09 202800](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/e9142b0a-439d-4640-bf68-9f4d3ee875f3)
