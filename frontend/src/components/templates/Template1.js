@@ -12,7 +12,7 @@ const Template1 = ({ resume }) => {
         const resumeTemplate = document.getElementById('resume-template');
 
         const opt = {
-            filename: user.fullName + ' resumse.pdf',
+            filename: user.fullName + ' resume.pdf',
             image: { type: 'jpeg', quality: 1 },
             html2canvas: { scale: 4 },
             jsPDF: { unit: 'px', format: [595, 842] }
@@ -120,6 +120,18 @@ const Template1 = ({ resume }) => {
                                 </div>
                             </div>
                         )}
+
+                        {/* education content */}
+                        {resume.education.length > 0 && (
+                            <div>
+                                <h5 className='resume-template-content-title'>EDUCATION HISTORY
+                                    <img className='resume-template-content-logo' src={process.env.PUBLIC_URL + '/images/education.png'} alt='' />
+                                </h5>
+                                <div className='resume-template-content'>
+                                    <span>{resume.education}</span>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
 
@@ -163,21 +175,6 @@ const Template1 = ({ resume }) => {
                                 <div className='resume-template-content'>
                                     {resume.organization.map((organization, index) => (
                                         <div><span key={index} href={organization}><strong>. </strong>{organization}</span><br /></div>
-                                    ))}<br />
-                                </div>
-                            </div>
-                        )}
-
-                        {/* Education content */}
-                        {resume.education.length > 0 && (
-                            <div>
-                                <h5 className='resume-template-content-title'>EDUCATION HISTORY
-                                    <img className='resume-template-content-logo' src={process.env.PUBLIC_URL + '/images/education.png'} alt='' />
-                                </h5>
-                                <div className='resume-template-content'>
-
-                                    {resume.education.map((education, index) => (
-                                        <div><span key={index} href={education}><strong>. </strong>{education}</span><br /></div>
                                     ))}<br />
                                 </div>
                             </div>
