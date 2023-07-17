@@ -14,6 +14,8 @@ your resume and edit it later whenever you need to update your information or ch
 This website is not hosted yet, if I did I will add the link of the website. If you are interested to try my website simply download the soure code and run in any terminal inside the backend directory 'npm install' then 'nodemon server.js'. Second step, run in the frontend directory 'npm install' then 'npm start' and then type in the web browser 'localhost:3000' and the website will work properly.
 
 ### Images
+![Screenshot 2023-07-17 152842](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/fb995a75-f9ae-4e9e-be97-24167e09ffd2)
+
 ![Screenshot 2023-07-09 202800](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/e9142b0a-439d-4640-bf68-9f4d3ee875f3)
 
 ![Screenshot 2023-07-09 202835](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/abdfe1b3-a089-495e-9d84-483f1530b6ed)
