@@ -1,7 +1,8 @@
-import {useState} from 'react'
+import { useState, useRef } from 'react'
 import { useDispatch } from 'react-redux';
 import { login } from '../../redux/slices/userSlice'
 import { setResumes } from '../../redux/slices/resumeSlice'
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -10,18 +11,22 @@ const Login = () => {
     const [isLoading, setIsLoading] = useState(false)
 
     const dispatch = useDispatch()
+    const captchaRef = useRef(null)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsLoading(true)
         setError(null)
 
+        const recaptchaToken = captchaRef.current.getValue();
+        captchaRef.current.reset();
+
         const response = await fetch('/api/user/login', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
+            body: JSON.stringify({ email, password, recaptchaToken })
         })
-        
+
         const json = await response.json()
 
         if (!response.ok) {
@@ -52,11 +57,13 @@ const Login = () => {
             <label>Password</label>
             <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
 
+            <ReCAPTCHA sitekey='6LdkwionAAAAAACRtUhCh9pQEtrrMCm2iMDpzid3' ref={captchaRef} /><br />
+
             {!isLoading && <button>Login</button>}
             {isLoading && <button disabled style={{ backgroundColor: '#1aac83a4' }}>Logging in...</button>}
             {error && <div className='error'>{error}</div>}
         </form>
     );
 }
- 
+
 export default Login;

@@ -555,3 +555,12 @@ form.create-resume {
   margin-right: 5px;
   /* Adjust the spacing between the icon and text as needed */
 }
+
+.password-instructions-text {
+  font-size: 13px;
+  color: red;
+}
+
+.password-instructions-text.valid {
+  color: green;
+}

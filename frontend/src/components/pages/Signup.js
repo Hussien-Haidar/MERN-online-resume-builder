@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { login } from '../../redux/slices/userSlice'
 import PortfolioInputs from '../partials/inputs/_portfolioInputs'
+import ReCAPTCHA from 'react-google-recaptcha';
 
 const Signup = () => {
     const [fullName, setFullName] = useState('');
@@ -20,12 +21,51 @@ const Signup = () => {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(false)
 
+    const [passwordContainEightChar, setPasswordContainEightChar] = useState(false);
+    const [passwordContainLowerChar, setPasswordContainLowerChar] = useState(false);
+    const [passwordContainUpperChar, setPasswordContainUpperChar] = useState(false);
+    const [passwordContainDig, setPasswordContainDig] = useState(false);
+    const [passwordContainSymb, setPasswordContainSymb] = useState(false);
+    const [passwordTextFieldFocused, setPasswordTextFieldFocused] = useState(false);
+
     const dispatch = useDispatch()
+    const captchaRef = useRef(null)
+
+    const validatePassword = (value) => {
+        const hasEightChar = value.length >= 8;
+        const hasLowerChar = /[a-z]/.test(value);
+        const hasUpperChar = /[A-Z]/.test(value);
+        const hasDigit = /[0-9]/.test(value);
+        const hasSymbol = /[!@#$%^&*()_+=.,/`~|;:'"<>?-]/.test(value);
+
+        setPasswordContainEightChar(hasEightChar);
+        setPasswordContainLowerChar(hasLowerChar);
+        setPasswordContainUpperChar(hasUpperChar);
+        setPasswordContainDig(hasDigit);
+        setPasswordContainSymb(hasSymbol);
+    };
+
+    const handlePasswordChange = (e) => {
+        const value = e.target.value;
+        setPassword(value);
+        validatePassword(value);
+    };
+
+    const handlePasswordFocus = () => {
+        setPasswordTextFieldFocused(true);
+    };
+
+    const handlePasswordBlur = () => {
+        setPasswordTextFieldFocused(false);
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsLoading(true)
         setError(null)
+
+        const recaptchaToken = captchaRef.current.getValue();
+        captchaRef.current.reset();
 
         if (password !== confirmedPassword) {
             setIsLoading(false)
@@ -36,7 +76,7 @@ const Signup = () => {
         const response = await fetch('/api/user/signup', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ fullName, email, phoneNumber, location, nationality, dateOfBirth, gender, portfolio, profilePicture, password })
+            body: JSON.stringify({ fullName, email, phoneNumber, location, nationality, dateOfBirth, gender, portfolio, profilePicture, password, recaptchaToken })
         })
 
         const json = await response.json()
@@ -46,6 +86,7 @@ const Signup = () => {
             setError(json.error)
             console.log(json.error)
         }
+
         if (response.ok) {
             setIsLoading(false)
             setError(null)
@@ -114,10 +155,23 @@ const Signup = () => {
             <PortfolioInputs />
 
             <label>Password <span style={{ fontSize: 12, color: 'grey', fontWeight: '600' }}>required</span></label>
-            <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+            <input type="password" onChange={handlePasswordChange} onFocus={handlePasswordFocus} onBlur={handlePasswordBlur} on value={password} />
+
+            {/* Password validation messages */}
+            {passwordTextFieldFocused && (
+                <div style={{ marginLeft: '15px' }}>
+                    <span className={`password-instructions-text ${passwordContainEightChar ? 'valid' : ''}`}>{passwordContainEightChar ? '✓' : 'x'} At least eight characters (8 char)*</span><br />
+                    <span className={`password-instructions-text ${passwordContainLowerChar ? 'valid' : ''}`}>{passwordContainLowerChar ? '✓' : 'x'} At least one lowercase character (a-z)*</span><br />
+                    <span className={`password-instructions-text ${passwordContainUpperChar ? 'valid' : ''}`}>{passwordContainUpperChar ? '✓' : 'x'} At least one uppercase character (A-Z)*</span><br />
+                    <span className={`password-instructions-text ${passwordContainDig ? 'valid' : ''}`}>{passwordContainDig ? '✓' : 'x'} At least one digit (0-9)*</span><br />
+                    <span className={`password-instructions-text ${passwordContainSymb ? 'valid' : ''}`}>{passwordContainSymb ? '✓' : 'x'} At least one symbol (? . , ! _ - ~ $ % + =)*</span><br /><br />
+                </div>
+            )}
 
             <label>Confirm Password <span style={{ fontSize: 12, color: 'grey', fontWeight: '600' }}>required</span></label>
             <input type="password" onChange={(e) => setConfirmedPassword(e.target.value)} value={confirmedPassword} />
+
+            <ReCAPTCHA sitekey='6LdkwionAAAAAACRtUhCh9pQEtrrMCm2iMDpzid3' ref={captchaRef} /><br />
 
             {!isLoading && <button>Sign up</button>}
             {isLoading && <button disabled style={{ backgroundColor: '#1aac83a4' }}>Signing up...</button>}

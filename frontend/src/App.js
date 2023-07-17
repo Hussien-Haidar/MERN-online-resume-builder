@@ -31,8 +31,6 @@ function App() {
             <Route path='view/resume/:id' element={user ? <ViewResume /> : <Navigate to='/login' />} />
             <Route path='view/resume/edit/:id' element={user ? <EditResume /> : <Navigate to='/login' />} />
             <Route path='me/resume/:id' element={user ? <ResumeDetails /> : <Navigate to='/login' />} />
-            
-
           </Routes>
         </div>
       </Router>
