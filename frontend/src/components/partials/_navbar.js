@@ -38,12 +38,12 @@ const Navbar = () => {
                     {user && (<div className="dropdown">
                         <button className="dropdown-toggle" onClick={toggleDropdown}>
                             <div className="dropdown-content">
+                                <span>{user && user.fullName}</span>
                                 {user && user.profilePicture ? (
                                     <img className="navbar-picture" src={user.profilePicture} alt="" />
                                 ) : (
                                     <img className="navbar-picture" src={process.env.PUBLIC_URL + '/images/empty.jpg'} alt="" />
                                 )}
-                                <span>{user && user.email}</span>
                             </div>
                         </button>
                         {isOpen && (
