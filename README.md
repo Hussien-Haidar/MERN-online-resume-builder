@@ -16,12 +16,12 @@ This website is not hosted yet, if I did I will add the link of the website. If 
 ### Images
 ![Screenshot 2023-07-17 152842](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/fb995a75-f9ae-4e9e-be97-24167e09ffd2)
 
-![Screenshot 2023-07-09 202800](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/e9142b0a-439d-4640-bf68-9f4d3ee875f3)
+![252159785-e9142b0a-439d-4640-bf68-9f4d3ee875f3](https://github.com/user-attachments/assets/80d015ba-0037-422f-994b-1119d6e94c52)
 
 ![Screenshot 2023-07-09 202835](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/abdfe1b3-a089-495e-9d84-483f1530b6ed)
 
-![Screenshot 2023-07-09 202901](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/40efcf4f-6305-4772-bf83-6e69994630b2)
+![252159816-40efcf4f-6305-4772-bf83-6e69994630b2](https://github.com/user-attachments/assets/b4acba3b-1450-43c1-9acc-5861b514ca0a)
 
 ![Screenshot 2023-07-09 202931](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/f234dbd7-01ce-4baf-a387-0333235447d9)
 
-![Screenshot 2023-07-09 202955](https://github.com/Hussien-Haidar/MERN-online-resume-builder/assets/125471428/ee0d10a2-bb2b-43e4-9049-18beaa6206fa)
+![252159820-ee0d10a2-bb2b-43e4-9049-18beaa6206fa](https://github.com/user-attachments/assets/094b244e-e3c6-47e7-bcb1-31661b36c5a0)
